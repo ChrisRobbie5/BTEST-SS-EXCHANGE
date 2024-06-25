@@ -10,8 +10,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-links">
-            <a class="nav-link" href="https://subwayswap.com">Home</a>
-            <a class="nav-link" href="#">Swap</a>
+            <a class="nav-link" href="https://subwayswap.com">Swap</a>
             <a class="nav-link" href="#">Pools</a>
             <a class="nav-link" href="#">Bonds</a>
             <a class="nav-link" href="#">Stake</a>
@@ -24,6 +23,8 @@
                     <a href="https://uniswap.com">Partner with Us</a>
                 </div>
             </div>
+            <a class="nav-link" href="#">Partners</a>
+            <a class="nav-link" href="#">Buy Crypto</a>
         </div>
     </nav>
 
@@ -49,19 +50,22 @@
         <span></span>
         <span></span>
         <span></span>
-        <span></span>
     </div>
 
-    <crowdswap-swap-widget
-        id="crowdswapWidget"
-        config='{
-            "fromTokenAddress":"0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-            "fromChainId":1,
-            "toTokenAddress":"0xba2ae424d960c26247dd6c32edc70b295c744c43",
-            "toChainId":56,
-            "theme":"dark",
-            "affiliateId":"https://app.crowdswap.org/exchange?referralId=subwayswap"
-        }'></crowdswap-swap-widget>
+    <div class="content">
+        <h1>Trade</h1>
+        <p>1 SUSHI ($0.83) = 0.0002 ETH ($3.39k)</p>
+        <crowdswap-swap-widget
+            id="crowdswapWidget"
+            config='{
+                "fromTokenAddress":"0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+                "fromChainId":1,
+                "toTokenAddress":"0xba2ae424d960c26247dd6c32edc70b295c744c43",
+                "toChainId":56,
+                "theme":"dark",
+                "affiliateId":"https://app.crowdswap.org/exchange?referralId=subwayswap"
+            }'></crowdswap-swap-widget>
+    </div>
 
     <script src="https://widget.crowdswap.org/loadAssets.js"></script>
 </body>
