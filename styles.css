@@ -27,27 +27,27 @@
     animation-iteration-count: infinite;
 }
 
-.button {
+.button-container {
     position: fixed;
     top: 10px;
     left: 10px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    padding-block: 0.3rem; /* Smaller padding */
-    padding-inline: 1rem; /* Smaller padding */
-    background-color: rgb(0 107 179);
-    border-radius: 9999px;
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.button {
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    padding: 0.5rem 1rem; /* Adjusted padding */
+    color: #ffff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #ffff;
-    gap: 6px; /* Smaller gap */
-    font-weight: bold;
-    border: 2px solid #ffffff4d; /* Slightly thinner border */
+    gap: 5px; /* Smaller gap */
     outline: none;
-    overflow: hidden;
-    font-size: 13px; /* Slightly smaller font size */
+    transition: transform 0.3s ease-in-out;
 }
 
 .icon {
@@ -58,53 +58,56 @@
 
 .button:hover {
     transform: scale(1.05);
-    border-color: #fff9;
 }
 
-.button:hover .icon {
-    transform: translate(4px);
+.dropdown {
+    position: relative;
+    color: #ffff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Smaller gap */
+    outline: none;
 }
 
-.button:hover::before {
-    animation: shine 1.5s ease-out infinite;
-}
-
-.button::before {
-    content: "";
+.dropdown-content {
+    display: none;
     position: absolute;
-    width: 100px;
-    height: 100%;
-    background-image: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0) 30%,
-        rgba(255, 255, 255, 0.8),
-        rgba(255, 255, 255, 0) 70%
-    );
-    top: 0;
-    left: -100px;
-    opacity: 0.6;
+    background-color: #1a1a1a;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px; /* Gap between dropdown items */
+}
+
+.dropdown-content button {
+    background-color: transparent;
+    color: #ffff;
+    padding: 0.5rem 1rem; /* Adjusted padding */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: left;
+}
+
+.dropdown-content button:hover {
+    background-color: #3c3c3c;
 }
 
 .separator {
     position: fixed;
-    top: calc(10px + 2rem); /* Adjusted to be just below the button */
+    top: calc(10px + 2rem); /* Adjusted to be just below the buttons */
     left: 10px;
     width: calc(100vw - 20px); /* Full width minus padding */
     height: 2px; /* Height of the separator */
     background-color: rgba(255, 255, 255, 0.3); /* Light gray color */
     z-index: 9999; /* Ensure above other elements */
-}
-
-@keyframes shine {
-    0% {
-        left: -100px;
-    }
-
-    60% {
-        left: 100%;
-    }
-
-    to {
-        left: 100%;
-    }
 }
