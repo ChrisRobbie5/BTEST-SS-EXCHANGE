@@ -3,18 +3,24 @@ body {
     font-family: Arial, sans-serif;
     background-color: #0a0a23; /* Midnight black with a hint of blue */
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Ensure space between elements */
-    padding: 10px;
+    width: 100%;
     background-color: #0a0a23; /* Match body background color */
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
 .swap-button,
-.more-button button {
+.more-button button,
+.home-button {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -25,7 +31,8 @@ header {
 }
 
 .swap-button:hover,
-.more-button button:hover {
+.more-button button:hover,
+.home-button:hover {
     background-color: rgba(255, 255, 255, 0.3);
     color: black;
 }
@@ -44,6 +51,7 @@ header {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px;
+    margin-top: 10px; /* Adjusted spacing from button */
 }
 
 .dropdown-content a {
@@ -65,22 +73,7 @@ header {
     width: calc(100% - 20px); /* Full width minus padding */
     height: 2px;
     background-color: rgba(255, 255, 255, 0.3); /* Lighter color for separator */
-    margin: 10px auto; /* Centered with margin top and bottom */
-}
-
-.home-button {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.home-button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: black;
+    margin: 10px 0; /* Adjusted margin */
 }
 
 .background {
@@ -105,6 +98,3 @@ header {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
-
-/* Animation styles for spans remain unchanged */
-
