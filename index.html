@@ -8,42 +8,50 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="background">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-<button> Hover me
-</button>
+    <button class="button" onclick="window.location.href='https://subwayswap.com'">
+        Home
+        <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+            <path
+            clip-rule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+            fill-rule="evenodd"
+            ></path>
+        </svg>
+    </button>
 
-<script src="https://widget.crowdswap.org/loadAssets.js"></script>
-<crowdswap-swap-widget
-  id="crowdswapWidget"
-  config='{
-    "fromTokenAddress":"0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-    "fromChainId":1,
-    "toTokenAddress":"0xba2ae424d960c26247dd6c32edc70b295c744c43",
-    "toChainId":56,
-    "theme":"dark",
-    "affiliateId":"https://app.crowdswap.org/exchange?referralId=subwayswap"
-}'></crowdswap-swap-widget>
-<link rel="stylesheet" href="styles.css">
+    <script src="https://widget.crowdswap.org/loadAssets.js"></script>
+    <crowdswap-swap-widget
+        id="crowdswapWidget"
+        config='{
+            "fromTokenAddress":"0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+            "fromChainId":1,
+            "toTokenAddress":"0xba2ae424d960c26247dd6c32edc70b295c744c43",
+            "toChainId":56,
+            "theme":"dark",
+            "affiliateId":"https://app.crowdswap.org/exchange?referralId=subwayswap"
+        }'></crowdswap-swap-widget>
 </body>
 </html>
