@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subway Swap Exchange</title>
+    <link rel="icon" type="image/png" href="/favicon-32x32.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+<button class="button" onclick="window.location.href='https://subwayswap.com'">
+  Home
+  <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+    <path
+      clip-rule="evenodd"
+      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+      fill-rule="evenodd"
+    ></path>
+  </svg>
+</button>
+<script>
+  const buttonStyle = `
+    .button {
+      --color: #560bad;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-family: inherit;
+      width: 8em;
+      height: 2.6em;
+      line-height: 2.5em;
+      overflow: hidden;
+      border: 2px solid var(--color);
+      transition: color 0.5s;
+      z-index: 1;
+      font-size: 17px;
+      border-radius: 6px;
+      font-weight: 500;
+      color: var(--color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      gap: 10px;
+      outline: none;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      color: #fff;
+    }
+
+    .button:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      background: var(--color);
+      height: 150px;
+      width: 200px;
+      border-radius: 50%;
+      top: 100%;
+      left: 100%;
+      transition: all 0.7s;
+    }
+
+    .button:hover:before {
+      top: -30px;
+      left: -30px;
+    }
+
+    .button:active:before {
+      background: #3a0ca3;
+      transition: background 0s;
+    }
+  `;
+
+  const style = document.createElement('style');
+  style.textContent = buttonStyle;
+  document.head.appendChild(style);
+</script>
+
+<script src="https://widget.crowdswap.org/loadAssets.js"></script>
+<crowdswap-swap-widget
+  id="crowdswapWidget"
+  config='{
+    "fromTokenAddress":"0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+    "fromChainId":1,
+    "toTokenAddress":"0xba2ae424d960c26247dd6c32edc70b295c744c43",
+    "toChainId":56,
+    "theme":"dark",
+    "affiliateId":"https://app.crowdswap.org/exchange?referralId=subwayswap"
+}'></crowdswap-swap-widget>
+<link rel="stylesheet" href="styles.css">
+</body>
+</html>
