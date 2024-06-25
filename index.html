@@ -8,156 +8,61 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="background">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-
-<div class="button-container">
-    <button class="button" onclick="window.location.href='https://subwayswap.com'">
-      Home
-      <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
-        <path
-          clip-rule="evenodd"
-          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-          fill-rule="evenodd"
-        ></path>
-      </svg>
-    </button>
-
-    <div class="dropdown">
-        More
-        <div class="dropdown-content">
-            <button onclick="window.location.href='https://uniswap.com/help'">Help</button>
-            <button onclick="window.location.href='https://uniswap.com/about'">About</button>
-            <button onclick="window.location.href='https://uniswap.com/partner'">Partner with Us</button>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a class="nav-link" href="https://subwayswap.com">Home</a>
+            <a class="nav-link" href="#">Swap</a>
+            <a class="nav-link" href="#">Pools</a>
+            <a class="nav-link" href="#">Bonds</a>
+            <a class="nav-link" href="#">Stake</a>
+            <a class="nav-link" href="#">Pay</a>
+            <div class="dropdown">
+                <button class="dropbtn">More</button>
+                <div class="dropdown-content">
+                    <a href="https://uniswap.com">Help</a>
+                    <a href="https://uniswap.com">About</a>
+                    <a href="https://uniswap.com">Partner with Us</a>
+                </div>
+            </div>
         </div>
+    </nav>
+
+    <div class="separator"></div>
+
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-</div>
 
-<div class="separator"></div>
+    <crowdswap-swap-widget
+        id="crowdswapWidget"
+        config='{
+            "fromTokenAddress":"0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+            "fromChainId":1,
+            "toTokenAddress":"0xba2ae424d960c26247dd6c32edc70b295c744c43",
+            "toChainId":56,
+            "theme":"dark",
+            "affiliateId":"https://app.crowdswap.org/exchange?referralId=subwayswap"
+        }'></crowdswap-swap-widget>
 
-<script>
-  const buttonStyle = `
-    .button-container {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      display: flex;
-      gap: 10px; /* Space between buttons */
-    }
-
-    .button {
-      background-color: transparent; /* Transparent background */
-      border: none; /* No border */
-      padding: 0.5rem 1rem; /* Adjusted padding */
-      color: #ffff;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      gap: 5px; /* Smaller gap */
-      outline: none;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .icon {
-      width: 24px;
-      height: 24px;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .button:hover {
-      transform: scale(1.05);
-    }
-
-    .dropdown {
-      position: relative;
-      color: #ffff;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      gap: 5px; /* Smaller gap */
-      outline: none;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #1a1a1a;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 5px; /* Gap between dropdown items */
-    }
-
-    .dropdown-content button {
-      background-color: transparent;
-      color: #ffff;
-      padding: 0.5rem 1rem; /* Adjusted padding */
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-align: left;
-    }
-
-    .dropdown-content button:hover {
-      background-color: #3c3c3c;
-    }
-
-    .separator {
-      position: fixed;
-      top: calc(10px + 2rem); /* Adjusted to be just below the buttons */
-      left: 10px;
-      width: calc(100vw - 20px); /* Full width minus padding */
-      height: 2px; /* Height of the separator */
-      background-color: rgba(255, 255, 255, 0.3); /* Light gray color */
-      z-index: 9999; /* Ensure above other elements */
-    }
-  `;
-
-  const style = document.createElement('style');
-  style.textContent = buttonStyle;
-  document.head.appendChild(style);
-</script>
-
-<script src="https://widget.crowdswap.org/loadAssets.js"></script>
-<crowdswap-swap-widget
-  id="crowdswapWidget"
-  config='{
-    "fromTokenAddress":"0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
-    "fromChainId":1,
-    "toTokenAddress":"0xba2ae424d960c26247dd6c32edc70b295c744c43",
-    "toChainId":56,
-    "theme":"dark",
-    "affiliateId":"https://app.crowdswap.org/exchange?referralId=subwayswap"
-}'></crowdswap-swap-widget>
+    <script src="https://widget.crowdswap.org/loadAssets.js"></script>
 </body>
 </html>
