@@ -1,13 +1,15 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #0b0d17;
+    color: #ffffff;
 }
 
 .navbar {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: #14032b;
+    background-color: #0b0d17;
     padding: 1rem;
     position: fixed;
     width: 100%;
@@ -54,7 +56,7 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #14032b;
+    background-color: #0b0d17;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -92,7 +94,7 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
-    background: #14032b;
+    background: #0b0d17;
     overflow: hidden;
     z-index: -1;
 }
@@ -110,4 +112,23 @@ body {
     100% {
         transform: translate3d(0, 0, 1px) rotate(360deg);
     }
+}
+
+.content {
+    margin-top: 100px; /* Space below the navbar and separator */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    color: #a0aec0;
+}
+
+crowdswap-swap-widget {
+    margin-top: 1rem;
 }
