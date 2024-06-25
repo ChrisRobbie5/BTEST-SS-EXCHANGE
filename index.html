@@ -42,9 +42,7 @@
   </svg>
 </button>
 
-<button class="secondary-button" onclick="window.location.href='https://subwayswap.com'">
-  Second Button
-</button>
+<div class="separator"></div>
 
 <script>
   const buttonStyle = `
@@ -52,29 +50,6 @@
       position: fixed;
       top: 10px;
       left: 10px;
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-      padding-block: 0.5rem;
-      padding-inline: 1.25rem;
-      background-color: rgb(0 107 179);
-      border-radius: 9999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #ffff;
-      gap: 10px;
-      font-weight: bold;
-      border: 3px solid #ffffff4d;
-      outline: none;
-      overflow: hidden;
-      font-size: 15px;
-    }
-
-    .secondary-button {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
       transition: all 0.3s ease-in-out;
       box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
       padding-block: 0.3rem; /* Smaller padding */
@@ -127,6 +102,16 @@
       top: 0;
       left: -100px;
       opacity: 0.6;
+    }
+
+    .separator {
+      position: fixed;
+      top: calc(10px + 2rem); /* Adjusted to be just below the button */
+      left: 10px;
+      width: calc(100vw - 20px); /* Full width minus padding */
+      height: 2px; /* Height of the separator */
+      background-color: rgba(255, 255, 255, 0.3); /* Light gray color */
+      z-index: 9999; /* Ensure above other elements */
     }
 
     @keyframes shine {
